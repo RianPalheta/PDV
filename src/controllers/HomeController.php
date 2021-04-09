@@ -18,8 +18,12 @@ class HomeController extends Controller {
     }
 
     public function index() {
+
+        $productList = ProductHandler::getProducts();
+
         $this->render('home', [
-            'loggedUser' => $this->loggedUser
+            'loggedUser' => $this->loggedUser,
+            'product' => $productList
         ]);
     }
 

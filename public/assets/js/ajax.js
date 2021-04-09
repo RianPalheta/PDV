@@ -81,7 +81,7 @@ $(document).ready(function () {
                 });
             },
             error: function() {
-                // alert('Ops! Algo deu errado.');
+                alert('Ops! Algo deu errado.');
             }
         });
     }

@@ -5,7 +5,7 @@ use \core\Controller;
 use src\handlers\ProductHandler;
 use src\handlers\UserHandler;
 
-class HomeController extends Controller {
+class ProductController extends Controller {
 
     private $loggedUser;
 
@@ -17,10 +17,10 @@ class HomeController extends Controller {
         }
     }
 
-    public function index() {
-        $this->render('home', [
-            'loggedUser' => $this->loggedUser
-        ]);
+    public function productAction() {
+        $product['list'] = ProductHandler::getProducts();
+
+        return json_encode($product);
     }
 
 }

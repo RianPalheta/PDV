@@ -1,26 +1,27 @@
 $(window).on('load', function() {
 
-    const inputs = document.querySelectorAll('.input')
+    $(document).ready(function() {
 
-    function focusFunc() {
-        let parent = this.parentNode.parentNode
-        parent.classList.add('focus');
-    }
+        const inputs = document.querySelectorAll('.input')
 
-    function blurFunc() {
-        let parent = this.parentNode.parentNode
-        if(this.value == "") {
-            parent.classList.remove('focus');
+        function focusFunc() {
+            let parent = this.parentNode.parentNode
+            parent.classList.add('focus');
         }
-    }
 
-    inputs.forEach(input => {
-        input.addEventListener('focus', focusFunc)
-        input.addEventListener('blur', blurFunc)
-    })
+        function blurFunc() {
+            let parent = this.parentNode.parentNode
+            if(this.value == "") {
+                parent.classList.remove('focus');
+            }
+        }
 
-    // Animação btn
-    $(document).ready(function(e) {
+        inputs.forEach(input => {
+            input.addEventListener('focus', focusFunc)
+            input.addEventListener('blur', blurFunc)
+        })
+
+        // Animação btn
         $('.btn').on('mouseenter', function(e) {
             x = e.pageX - $(this).offset().left
             y = e.pageY - $(this).offset().top
@@ -32,6 +33,6 @@ $(window).on('load', function() {
             y = e.pageY - $(this).offset().top
 
             $(this).find('span').css({top:y, left:x})
-        })
+        })   
     })
 })

@@ -7,9 +7,6 @@ use src\handlers\UserHandler;
 class LoginController extends Controller {
 
     public function signin() {
-        if( !empty( $_SESSION['token'] ) ) {
-            $this->redirect('/');
-        }
         $this->render('login');
     }
 

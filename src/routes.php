@@ -12,3 +12,5 @@ $router->get('/signup', 'LoginController@signup');
 $router->post('/cadastro', 'LoginController@signupAction');
 
 $router->get('/logout', 'LoginController@logout');
+
+$router->post('/products', 'ProductController@productAction');
